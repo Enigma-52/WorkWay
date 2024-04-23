@@ -1,8 +1,9 @@
 
+<div align="center">
 
-<h3 align="center">WorkWay</h3>
+## WorkWay
 
-
+</div>
 
 ## Screenshots
 
