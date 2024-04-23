@@ -1,7 +1,7 @@
 # WorkWay
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://travis-ci.org/username/project.svg?branch=master)](https://travis-ci.org/username/project)
-[![codecov](https://codecov.io/gh/username/project/branch/master/graph/badge.svg)](https://codecov.io/gh/username/project)
+[![Build Status](https://travis-ci.org/username/project.svg?branch=master)](https://travis-ci.org/Enigma-52/WorkWay)
+[![codecov](https://codecov.io/gh/username/project/branch/master/graph/badge.svg)](https://codecov.io/gh/Enigma-52/WorkWay)
 [![GitHub issues](https://img.shields.io/github/issues/username/project)](https://github.com/Enigma-52/WorkWay/issues)
 [![GitHub forks](https://img.shields.io/github/forks/username/project)](https://github.com/Enigma-52/WorkWay/network)
 [![GitHub stars](https://img.shields.io/github/stars/username/project)](https://github.com/Enigma-52/WorkWay/stargazers)
