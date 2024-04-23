@@ -8,7 +8,11 @@
 ## Screenshots
 
 ![3B7EF26D-81AE-4130-9DAC-61A66FE7E0E0](https://github.com/Enigma-52/WorkWay/assets/95529619/dccafff9-6e7b-4e17-b9ec-950d3748b985)
+
+
 ![2DDB19EF-601D-4146-8125-7B7DAB8EFB8F](https://github.com/Enigma-52/WorkWay/assets/95529619/9dac6df4-50d3-4fab-8979-084b6b20d1cb)
+
+
 ![83EE7BF5-AABB-4B0E-9B45-6C79049B17AA](https://github.com/Enigma-52/WorkWay/assets/95529619/a398dbb6-0f75-4079-ad85-d24ca36996a1)
 
 
