@@ -1,10 +1,15 @@
-# WorkWay
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://travis-ci.org/username/project.svg?branch=master)](https://travis-ci.org/Enigma-52/WorkWay)
-[![codecov](https://codecov.io/gh/username/project/branch/master/graph/badge.svg)](https://codecov.io/gh/Enigma-52/WorkWay)
-[![GitHub issues](https://img.shields.io/github/issues/username/project)](https://github.com/Enigma-52/WorkWay/issues)
-[![GitHub forks](https://img.shields.io/github/forks/username/project)](https://github.com/Enigma-52/WorkWay/network)
-[![GitHub stars](https://img.shields.io/github/stars/username/project)](https://github.com/Enigma-52/WorkWay/stargazers)
+
+
+<h3 align="center">WorkWay</h3>
+
+<div align="center">
+
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
+  [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Enigma-52/WorkWay/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Enigma-52/WorkWay/pulls)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
 
 ## Screenshots
 
