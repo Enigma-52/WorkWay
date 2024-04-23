@@ -1,0 +1,126 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.search-container {
+  margin: auto;
+  padding-top: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#jobTitle, #companyDropdown ,#jobLocation {
+  padding: 13px;
+  font-size: 18px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  outline: none;
+}
+
+#searchButton {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+  background-color: #0056b3;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.job-card {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #333;
+}
+
+.job-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.job-card a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.job-card a:hover {
+  color: #0056b3;
+}
+
+.no-jobs-message {
+  display: none;
+  font-size: 24px;
+  color: red;
+  text-align: center; 
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.job-count-message{
+  font-size: 24px;
+  color: rgb(76, 205, 85);
+  text-align: center; 
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.pay-button {
+  width: 300px;
+  height: 40px;
+  display:flex;
+  justify-content: center; /* Make the button a block-level element */
+  margin: 20px auto; /* Center the button horizontally with top and bottom margin */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pay-button:hover {
+  background-color: #0056b3;
+}
+.subheading {
+  text-align: center;
+  margin-top: 10px; /* Adjust as needed */
+  font-size: 16px; /* Adjust font size */
+  color: #333; /* Adjust text color */
+  font-weight: bold; /* Adjust font weight */
+  line-height: 1.5; /* Adjust line height */
+}
+

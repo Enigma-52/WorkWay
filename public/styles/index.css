@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:700&display=swap');
+
+@keyframes ticker {
+   0% { transform: translate3d(25%, 0, 0); }
+   100% { transform: translate3d(-25%, 0, 0); }
+}
+
+.group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+.row{
+  width: 600vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  transform: translate3d(25%, 0, 0); 
+  white-space: nowrap;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ticker;
+  animation-duration: 60s;
+}
+
+.row:hover {
+  animation-play-state: paused;
+}
+
+.row:nth-child(even) {
+  animation-direction: reverse;
+}
+
+.row span {
+  font-size: 40px;
+  -webkit-text-stroke-color: rgb(5, 5, 5);
+}
