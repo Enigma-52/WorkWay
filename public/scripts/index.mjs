@@ -12,7 +12,6 @@ fetch('/firebase-config')
     })
     .then(data => {
         firebaseConfig = data.firebaseConfig;
-        // Now you can use firebaseConfig in your client-side code
         console.log(firebaseConfig);
     })
     .catch(error => {
