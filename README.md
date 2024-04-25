@@ -58,7 +58,7 @@ FIREBASE_MEASUREMENT_ID: `Your_Firebase_Measurement_ID_Here`
    
 ## Job Fetch
 
-Create your '.env' file and add your details to it.
+Create your '.env' file and add your details to the file.
 
 1. To fetch Jobs from Lever Company pages : 'node fetchLever.mjs'
 2. To fetch Jobs from Greenhouse Company pages : 'node fetchGreenhouse.mjs'
