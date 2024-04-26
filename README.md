@@ -30,7 +30,7 @@ cd WorkWay
 
 3. Install dependencies:
 ```bash
-npm i
+npm install
 ```
 
 4. Create a '.env' file with the following structure:
