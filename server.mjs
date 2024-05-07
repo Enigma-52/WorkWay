@@ -39,6 +39,9 @@ app.get('/firebase-config', (req, res) => {
 
 app.post('/user', async (req, res) => {
     const userId = req.body.userId;
+    const userEmailId = req.body.email;
+    
+    console.log(req.body);
     console.log('Received user ID:', userId);
 
     user=userId;
@@ -49,17 +52,22 @@ app.post('/user', async (req, res) => {
         const querySnapshot = await getDocs(usersCollectionRef);
 
         let subscribed = false;
+        let email = userEmailId;
+
+        console.log(email);
 
         const userDoc = querySnapshot.docs.find(doc => doc.id === userId);
         if (userDoc && userDoc.data().hasOwnProperty('subscribed')) {
             subscribed = userDoc.data().subscribed;
-        } else {
-            await setDoc(doc(db, 'users', userId), { subscribed: false }, { merge: true });
         }
 
-        userSubscribed = subscribed;
-        console.log('Subscribed:', subscribed);
+        const data = {
+          subscribed: subscribed ,
+          email: email
+        };
 
+        setDoc(doc(db, 'users', userId), data, { merge: true });
+        
         res.sendStatus(200);
     } catch (error) {
         console.error('Error handling user:', error);
@@ -126,6 +134,90 @@ app.post('/applications', async (req, res) => {
   });
   res.sendStatus(200);
 });
+
+app.post('/saveJobAlert',async (req, res) => {
+  try {
+      const data = req.body;
+
+      console.log('Received job alert data:', data);
+      
+      const userRef = collection(db, 'users');
+      const querySnapshot = await getDocs(userRef);
+      let jobAlerts;
+      querySnapshot.forEach(async (doc) => {
+        if (doc.id === user) {
+          const userData = doc.data();
+          jobAlerts = userData.jobAlerts || [];
+
+          jobAlerts.push(data);
+
+          await setDoc(doc.ref, { jobAlerts: jobAlerts });
+
+        }
+      });
+
+      res.status(200).json({ message: 'Job alert saved successfully' });
+  } catch (error) {
+      console.error('Error saving job alert:', error);
+      res.status(500).json({ error: 'Failed to save job alert' });
+  }
+});
+
+app.put('/deleteJobAlert', async (req, res) => {
+  try {
+      const { index } = req.body; // Retrieve the index from the request body
+
+      const userRef = collection(db, 'users');
+      const querySnapshot = await getDocs(userRef);
+      let jobAlerts;
+      querySnapshot.forEach(async (doc) => {
+        if (doc.id === user) {
+          const userData = doc.data();
+          jobAlerts = userData.jobAlerts || [];
+
+          if (index >= 0 && index < jobAlerts.length) {
+            jobAlerts.splice(index, 1);
+          } else {
+              throw new Error('Invalid index');
+          }
+
+          console.log(index);
+            
+          setDoc(doc.ref, { jobAlerts: jobAlerts });
+
+          console.log(jobAlerts);
+        }
+      });
+
+      res.status(200).json({ message: 'Job alert deleted successfully' });
+  } catch (error) {
+      console.error('Error deleting job alert:', error);
+      res.status(500).json({ error: 'Failed to delete job alert' });
+  }
+});
+
+
+// Add a new GET endpoint to fetch job alerts for a user
+app.get('/jobAlerts', async (req, res) => {
+  try {
+      const userRef = collection(db, 'users');
+      const querySnapshot = await getDocs(userRef);
+      let jobAlerts;
+      querySnapshot.forEach(async (doc) => {
+        if (doc.id === user) {
+          const userData = doc.data();
+          jobAlerts = userData.jobAlerts || [];
+        }
+      });
+
+      res.status(200).json(jobAlerts);
+  } catch (error) {
+      console.error('Error fetching job alerts:', error);
+      res.status(500).json({ error: 'Failed to fetch job alerts' });
+  }
+});
+
+
 
 app.get('/appliedJobs', async (req, res) => {
   try {

@@ -26,12 +26,19 @@ async function handleGoogle() {
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
     console.log("USER SIGNED IN -> " + user.uid);
+
+    const requestBody = {
+        userId: user.uid,
+        email: user.email // Include the user's email
+    };
+
+
     const response = await fetch('/user', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ userId: user.uid })
+        body: JSON.stringify(requestBody)
     });
     window.location.href = '/search.html';
 }

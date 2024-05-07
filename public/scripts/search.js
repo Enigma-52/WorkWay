@@ -293,8 +293,12 @@ document.getElementById('pay-button').addEventListener('click', async function(e
 
 const viewApplicationsButton = document.getElementById('viewApplicationsButton');
 
-// Add click event listener
 viewApplicationsButton.addEventListener('click', () => {
-  // Redirect to applications.html
   window.location.href = 'applications.html';
+});
+
+const jobAlertButton = document.getElementById('jobAlerts');
+jobAlertButton.addEventListener('click', () => {
+
+  window.location.href = 'jobAlert.html';
 });
