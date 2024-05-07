@@ -11,6 +11,8 @@ import express from 'express';
 import fetch from 'node-fetch';
 import path from 'path';
 
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 const app = express();
@@ -147,7 +149,7 @@ async function processJobAlerts() {
             
             // Check if the user has a jobAlerts array
             if (userData.hasOwnProperty('jobAlerts')) {
-                
+
                 console.log(userData.email);
                 const jobAlerts = userData.jobAlerts;
                 
@@ -197,7 +199,7 @@ async function sendEmail(email, subject, content) {
         service: 'Gmail',
         auth: {
             user: 'rohit.singh.33521@gmail.com',
-            pass: 'zgpa dpez hayr wryy'
+            pass: GMAIL_PASS
         }
     });
 
