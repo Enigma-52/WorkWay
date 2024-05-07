@@ -199,7 +199,7 @@ async function sendEmail(email, subject, content) {
         service: 'Gmail',
         auth: {
             user: 'rohit.singh.33521@gmail.com',
-            pass: GMAIL_PASS
+            pass: process.env.GMAIL_PASS
         }
     });
 
