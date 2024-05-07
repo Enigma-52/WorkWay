@@ -30,7 +30,7 @@ cd WorkWay
 
 3. Install dependencies:
 ```bash
-npm i
+npm install
 ```
 
 4. Create a '.env' file with the following structure:
@@ -58,7 +58,7 @@ FIREBASE_MEASUREMENT_ID: `Your_Firebase_Measurement_ID_Here`
    
 ## Job Fetch
 
-Create your '.env' file and add your details to it.
+Create your '.env' file and add your necessary details to the file.
 
 1. To fetch Jobs from Lever Company pages : 'node fetchLever.mjs'
 2. To fetch Jobs from Greenhouse Company pages : 'node fetchGreenhouse.mjs'
