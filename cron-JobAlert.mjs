@@ -1,15 +1,11 @@
 import pkg from './firebaseConfig.mjs';
 const {
     db,
-    doc,
-    setDoc,
     getDocs,
     collection
 } = pkg;
 import nodemailer from 'nodemailer';
 import express from 'express';
-import fetch from 'node-fetch';
-import path from 'path';
 
 import dotenv from 'dotenv';
 dotenv.config();
