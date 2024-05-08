@@ -182,20 +182,12 @@ async function processJobAlerts() {
     }
 }
 
-// Run the function
 processJobAlerts();
 
 
-
-
-
-
-// Function to send email
 async function sendEmail(email, subject, content) {
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
-        // Your email service configuration (SMTP or other)
-        // Example for using Gmail:
         service: 'Gmail',
         auth: {
             user: 'rohit.singh.33521@gmail.com',
@@ -203,16 +195,14 @@ async function sendEmail(email, subject, content) {
         }
     });
 
-    // Email message options
     const mailOptions = {
         from: 'Rohit Singh <rohit.singh.33521@gmail.com>',
         to: email,
         subject: subject,
-        html: content // Email content as HTML
+        html: content 
     };
 
     try {
-        // Send email
         await transporter.sendMail(mailOptions);
         console.log(`Email sent successfully to ${email}`);
     } catch (error) {
@@ -220,19 +210,6 @@ async function sendEmail(email, subject, content) {
         throw new Error('Failed to send email');
     }
 }
-
-// Usage example
-// const email = 'rohitsingh.work.25@gmail.com';
-// const subject = 'Test Email';
-// const content = '<p>This is a test email.</p>';
-// sendEmail(email, subject, content)
-//     .then(() => {
-//         console.log('Email sent successfully!');
-//     })
-//     .catch(error => {
-//         console.error('Error sending email:', error);
-//     });
-
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
