@@ -29,7 +29,6 @@ function getJobs() {
         });
 }
 
-// Assuming this code is inside a function that adds job alerts to the view
 function addToView(jobAlerts) {
     console.log(jobAlerts);
 
