@@ -78,8 +78,6 @@ document.getElementById('addAlertBtn').addEventListener('click', function() {
     specificDay: specificDay
 };
 
-
-// Call the function with your data
 saveJobAlert(data);
 
 async function saveJobAlert(data) {
