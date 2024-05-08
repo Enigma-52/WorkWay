@@ -14,7 +14,6 @@ dotenv.config();
 const app = express();
 const port = 8000;
 
-let storedJobs; 
 
 const jobs = [];
 let filteredJobs = [];
