@@ -154,15 +154,14 @@ async function processJobAlerts() {
                         const jobs = await fetchAndFilterJobs(jobAlert.jobTitle, jobAlert.company, jobAlert.location);
                         console.log(jobs);
         
-                        // Constructing the HTML content
                         const jobListingsHTML = jobs.map(job => generateJobHTML(job)).join('');
                         
-                        // Complete HTML content
                         const htmlContent = htmlContentGenerator(jobListingsHTML);
         
                         const email = userDoc.data().email;
                         const subject = 'Your Job Alerts are here!';
                         const content = htmlContent;
+                        
                         sendEmail(email, subject, content);
                     } catch (error) {
                         console.error('Error processing job alerts:', error);
