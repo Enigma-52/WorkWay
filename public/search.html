@@ -13,7 +13,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Job Board</title>
+  <title>WorkWay</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./styles/search.css">
 </head>
@@ -29,10 +29,15 @@
   <div id="noJobsMessage" class="no-jobs-message" style="display: none; ">
     <p>No jobs found matching your search criteria.</p>
   </div>
+  <div class="max-w-2xl mx-auto my-2 p-4 bg-blue-100 border border-blue-500 rounded-lg text-blue-700 text-center" role="alert">
+    <p class="font-bold">Exciting News!</p>
+    <p>Workway v2 is now in beta. Experience the next level of job searching - <a href="https://work-way-v2.vercel.app/" class="underline font-semibold">Try it out here</a>!</p>
+  </div>
   <div id="jobCountMessage" class="job-count-message"></div>
   <div id="jobList" class="job-list"></div>
   <button type="button" id="pay-button"></button>
   <p id="pay-subheading"></p>
+  
   <button id="viewApplicationsButton" class="fixed top-0 right-0 m-4 px-4 py-2 bg-white text-blue-500 font-semibold rounded-lg shadow-md hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50">Your Applications</button>
 
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
