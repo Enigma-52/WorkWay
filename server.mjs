@@ -86,27 +86,50 @@ app.get('/userSubscribed', (req, res) => {
 const jobs = [];
 addJobs();
 async function addJobs() {
-    try {
-      const jobsCollection = collection(db, 'jobs');
-      const snapshot = await getDocs(jobsCollection);
-  
-      snapshot.forEach(doc => {
-        const company = doc.id;
-        const jobData = doc.data().data.jobs;
-  
-        jobData.forEach(job => {
-          jobs.push({
-            title: job.title,
-            location: job.location.name,
-            company,
-            absoluteUrl: job.absolute_url
-          });
+  try {
+    console.log('Starting addJobs function');
+    
+    if (!db) {
+      console.error('Database object is not initialized');
+      return;
+    }
+
+    const jobsCollection = collection(db, 'jobs');
+    console.log('Attempting to get documents from jobs collection');
+    
+    const snapshot = await getDocs(jobsCollection);
+    
+    if (snapshot.empty) {
+      console.log('No documents found in the jobs collection');
+      return;
+    }
+
+    console.log(`Found ${snapshot.size} documents`);
+
+    snapshot.forEach(doc => {
+      const company = doc.id;
+      const jobData = doc.data().data?.jobs;
+
+      if (!jobData) {
+        console.log(`No job data found for company: ${company}`);
+        return;
+      }
+
+      jobData.forEach(job => {
+        jobs.push({
+          title: job.title,
+          location: job.location?.name || 'Unknown',
+          company,
+          absoluteUrl: job.absolute_url
         });
       });
-    } catch (error) {
-      console.error('Error adding jobs:', error);
-    }
+    });
+
+    console.log(`Total jobs added: ${jobs.length}`);
+  } catch (error) {
+    console.error('Error in addJobs function:', error);
   }
+}
   
 // Modify the /jobs endpoint to return a list of unique companies
 app.get('/companies', async (req, res) => {
