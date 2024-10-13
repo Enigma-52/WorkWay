@@ -33,6 +33,10 @@ app.get('/', (req, res) => {
 let userSubscribed;
 let user;
 
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
 app.get('/firebase-config', (req, res) => {
   res.json({ firebaseConfig });
 });
